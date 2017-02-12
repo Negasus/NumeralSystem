@@ -39,7 +39,7 @@ class NumeralSystem
      *
      * @var string
      */
-    private $_alphabet;
+    private $alphabet;
 
     /**
      * NumeralSystem constructor.
@@ -49,7 +49,7 @@ class NumeralSystem
     public function __construct($alphabet = null)
     {
         // Set default alphabet
-        $this->_alphabet = (is_null($alphabet)) ? $this::ALPHABET_FULL_TEXT : $alphabet;
+        $this->alphabet = (is_null($alphabet)) ? $this::ALPHABET_FULL_TEXT : $alphabet;
     }
 
     /**
@@ -62,10 +62,12 @@ class NumeralSystem
      */
     public function generateAlphabet($size)
     {
-        if ($size > strlen($this->_alphabet)) {
-            throw new NumeralSystemException('Size generated alphabet must max: ' . strlen($this->_alphabet) . '. Got ' . $size);
+        if ($size > strlen($this->alphabet)) {
+            throw new NumeralSystemException('Size generated alphabet must max: ' .
+                strlen($this->alphabet) .
+                '. Got ' . $size);
         }
-        $base = $this->_alphabet;
+        $base = $this->alphabet;
         $result = '';
         mt_srand();
         for ($i = 0; $i < $size; $i++) {
@@ -98,7 +100,7 @@ class NumeralSystem
     public function shuffle($seed)
     {
         mt_srand($seed);
-        $result = $this->_alphabet;
+        $result = $this->alphabet;
         for ($i = 0; $i < strlen($result); $i++) {
             $index = mt_rand(0, strlen($result) - 1);
             $a = $result[$index];
@@ -117,7 +119,7 @@ class NumeralSystem
      */
     public function shuffleAndSet($key)
     {
-        return $this->_alphabet = $this->shuffle($key);
+        return $this->alphabet = $this->shuffle($key);
     }
 
     /**
@@ -127,7 +129,7 @@ class NumeralSystem
      */
     public function getAlphabet()
     {
-        return $this->_alphabet;
+        return $this->alphabet;
     }
 
     /**
@@ -143,7 +145,7 @@ class NumeralSystem
         if (!$this->isAlphabetCorrect($alphabet)) {
             throw new NumeralSystemException('Alphabet has duplicates symbols');
         }
-        return $this->_alphabet = $alphabet;
+        return $this->alphabet = $alphabet;
     }
 
     /**
@@ -155,20 +157,20 @@ class NumeralSystem
      */
     public function encode($value)
     {
-        $size = strlen($this->_alphabet);
+        $size = strlen($this->alphabet);
 
         $base = (int)floor($value / $size);
         $rest = $value % $size;
 
         if ($base == 0) {
-            return $this->_alphabet[$rest];
+            return $this->alphabet[$rest];
         }
 
         if ($base >= $size) {
-            return $this->encode($base) . $this->_alphabet[$rest];
+            return $this->encode($base) . $this->alphabet[$rest];
         }
 
-        return $this->_alphabet[$base] . $this->_alphabet[$rest];
+        return $this->alphabet[$base] . $this->alphabet[$rest];
     }
 
     /**
@@ -183,9 +185,8 @@ class NumeralSystem
         $value = strrev((string)$value);
         $result = 0;
         for ($i = 0; $i < strlen($value); $i++) {
-            $result += pow(strlen($this->_alphabet), $i) * strpos($this->_alphabet, $value[$i]);
+            $result += pow(strlen($this->alphabet), $i) * strpos($this->alphabet, $value[$i]);
         }
         return $result;
     }
-
 }

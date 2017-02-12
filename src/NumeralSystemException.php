@@ -4,7 +4,7 @@ namespace Negasus\NumeralSystem;
 
 /**
  * Exception for package
- * 
+ *
  * @category Package
  * @package  Negasus\NumeralSystem
  * @author   Negasus <negasus@gmail.com>
