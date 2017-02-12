@@ -9,7 +9,7 @@ Code and decode numbers with any numeral system.
 
 Bin, Hex, your numeral systems with custom alphabet!
 
-More info in [wiki][link-wiki]
+More info in the [wiki][link-wiki]
 
 
 ## Structure
@@ -39,10 +39,10 @@ $numeralSystem->setAlphabet($numeralSystem::ALPHABET_HEX);
 echo $numeralSystem->encode(172224397); // see: A43EF8D
 
 $numeralSystem->setAlphabet('AbCd');
-echo $numeralSystem->encode(172224397); /see: CCbAAddCddCAdb
+echo $numeralSystem->encode(172224397); // see: CCbAAddCddCAdb
 ```
 
-More info in [wiki][link-wiki]
+More info in the [wiki][link-wiki]
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
