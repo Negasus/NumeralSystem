@@ -5,7 +5,12 @@
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Description
+Code and decode numbers with any numeral system.
+
+Bin, Hex, your numeral systems with custom alphabet!
+
+More info in [wiki][link-wiki]
+
 
 ## Structure
 
