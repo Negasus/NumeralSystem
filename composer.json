@@ -1,12 +1,12 @@
 {
-    "name": "Negasus/NumeralSystem",
+    "name": "negasus/numeral-system",
     "type": "library",
     "description": "Numeral System",
     "keywords": [
         "Negasus",
-        "custom-number-system"
+        "numeral system"
     ],
-    "homepage": "https://github.com/negasus/numeral-system",
+    "homepage": "https://github.com/Negasus/NumeralSystem",
     "license": "MIT",
     "authors": [
         {

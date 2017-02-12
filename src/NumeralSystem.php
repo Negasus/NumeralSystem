@@ -63,9 +63,8 @@ class NumeralSystem
     public function generateAlphabet($size)
     {
         if ($size > strlen($this->alphabet)) {
-            throw new NumeralSystemException('Size generated alphabet must max: ' .
-                strlen($this->alphabet) .
-                '. Got ' . $size);
+            throw new NumeralSystemException('Size generated alphabet must max: '
+                . strlen($this->alphabet) . '. Got ' . $size);
         }
         $base = $this->alphabet;
         $result = '';
