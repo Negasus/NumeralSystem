@@ -1,0 +1,48 @@
+{
+    "name": "Negasus/NumeralSystem",
+    "type": "library",
+    "description": "Numeral System",
+    "keywords": [
+        "Negasus",
+        "custom-number-system"
+    ],
+    "homepage": "https://github.com/negasus/numeral-system",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Negasus",
+            "email": "negasus@gmail.com",
+            "homepage": "http://negasus.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "~5.6|~7.0"
+    },
+    "require-dev": {
+        "phpunit/php-code-coverage": "^4.0",
+        "phpunit/phpunit": "~4.0||~5.0",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Negasus\\NumeralSystem\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Negasus\\NumeralSystem\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
